@@ -1,0 +1,29 @@
+{
+    "selector": "source.raku",
+    "file_patterns": ["*.raku", "*.rakumod", "*.rakutest"],
+    "working_dir": "$file_path",
+    "encoding": "utf-8",
+    "env": {
+        "AUTHOR_TESTING": "1"
+    },
+    "cmd": ["raku", "--optimize=3", "-Ilib", "-I../lib", "-I../../lib", "$file"],
+    "variants":[
+        {
+            "name": "Profile Script",
+            "cmd": ["raku", "--optimize=3", "-Ilib", "-I../lib", "-I../../lib", "--profile", "$file"],
+        },
+        {
+            "name": "Test File",
+            "cmd": ["prove6", "-Ilib", "-I../lib", "-I../../lib", "--timer", "$file"]
+        },
+        {
+            "name": "Test Folder",
+            "cmd": ["prove6", "-Ilib", "-I../lib", "-I../../lib", "--timer", "--jobs=3", "$file_path"]
+        },
+        {
+            "name": "Test Project",
+            "keyfiles": ["META6.json"],
+            "cmd": ["prove6", "--lib", "--timer", "--jobs=3"]
+        }
+    ]
+}
