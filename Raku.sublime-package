@@ -1,6 +1,7 @@
 {
     "selector": "source.raku",
-    "file_patterns": ["*.raku", "*.rakumod", "*.rakutest"],
+    "file_patterns": ["*.raku", "*.rakumod", "*.rakutest", "*.rakudoc", "*.nqp"],
+    "syntax": "Packages/User/Raku.sublime-syntax",
     "working_dir": "$file_path",
     "encoding": "utf-8",
     "env": {
@@ -24,6 +25,10 @@
             "name": "Test Project",
             "keyfiles": ["META6.json"],
             "cmd": ["prove6", "--lib", "--timer", "--jobs=3"]
+        },
+        {
+            "name": "Extract Doc",
+            "cmd": ["raku", "--optimize=3", "-Ilib", "-I../lib", "-I../../lib", "--doc", "$file"],
         }
     ]
 }
