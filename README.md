@@ -1,5 +1,8 @@
 # sublimetext-build-systems-raku
 Enable Raku in Sublime Text
+## Usage
+https://www.sublimetext.com/docs/build_systems.html#running-a-build
+
 ## Installing Sublime using https://brew.sh/
 ```bash
 brew install sublime-text
@@ -10,23 +13,28 @@ brew install rakudo-star
 zef install App::Prove6
 ```
 
-## Setup Raku.sublime-package
+## Setup Shortcuts & Syntax Highlighting
+Syntax highlighting was taken from https://github.com/silentTeee/sublimetext3-perl6-syntax
+
 ### MacOS
 ```bash
 FILE=Raku.sublime-package
+SYNTAX=Raku.sublime-syntax
+
 SOURCE_DIR=https://raw.githubusercontent.com/rcmlz/sublimetext-build-systems-raku/main
 TARGET_DIR=~/Library/Application\ Support/Sublime\ Text/Packages/User
+
 mkdir -p $TARGET_DIR
 curl "$SOURCE_DIR/$FILE" -o "$TARGET_DIR/$FILE"
+curl "$SOURCE_DIR/$FILE" -o "$TARGET_DIR/$SYNTAX"
+
 cat "$TARGET_DIR/$FILE"
+cat "$TARGET_DIR/$SYNTAX"
 ```
 ### Linux
-
+ToDo
 ### Windows
+ToDo
 
-## Usage
-https://www.sublimetext.com/docs/build_systems.html#running-a-build
-
-## Issues
-- Syntax Highlighting missing
+## Known Issues
 - make Raku.sublime-package OS independent
