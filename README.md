@@ -18,18 +18,18 @@ Syntax highlighting was taken from https://github.com/silentTeee/sublimetext3-pe
 
 ### MacOS
 ```bash
-FILE=Raku.sublime-build
-SYNTAX=Raku.sublime-syntax
+BUILD_FILE=Raku.sublime-build
+SYNTAX_FILE=Raku.sublime-syntax
 
 SOURCE_DIR=https://raw.githubusercontent.com/rcmlz/sublimetext-build-systems-raku/main
 TARGET_DIR=~/Library/Application\ Support/Sublime\ Text/Packages/User
 
 mkdir -p $TARGET_DIR
-curl "$SOURCE_DIR/$FILE" -o "$TARGET_DIR/$FILE"
-curl "$SOURCE_DIR/$FILE" -o "$TARGET_DIR/$SYNTAX"
+curl "$SOURCE_DIR/$BUILD_FILE" -o "$TARGET_DIR/$BUILD_FILE"
+curl "$SOURCE_DIR/$SYNTAX_FILE" -o "$TARGET_DIR/$SYNTAX_FILE"
 
-cat "$TARGET_DIR/$FILE"
-cat "$TARGET_DIR/$SYNTAX"
+cat "$TARGET_DIR/$BUILD_FILE"
+cat "$TARGET_DIR/$SYNTAX_FILE"
 ```
 ### Linux
 ToDo
