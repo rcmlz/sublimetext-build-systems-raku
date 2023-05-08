@@ -18,7 +18,7 @@ Syntax highlighting was taken from https://github.com/silentTeee/sublimetext3-pe
 
 ### MacOS
 ```bash
-FILE=Raku.sublime-package
+FILE=Raku.sublime-build
 SYNTAX=Raku.sublime-syntax
 
 SOURCE_DIR=https://raw.githubusercontent.com/rcmlz/sublimetext-build-systems-raku/main
