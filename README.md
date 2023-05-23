@@ -10,7 +10,7 @@ brew install sublime-text
 ## Installing Raku & App::Prove6
 ```bash
 brew install rakudo-star
-zef install App::Prove6
+zef install App::Prove6 Terminal::ANSIColor
 ```
 
 ## Setup Shortcuts & Syntax Highlighting

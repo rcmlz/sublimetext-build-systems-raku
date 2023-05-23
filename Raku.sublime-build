@@ -2,33 +2,37 @@
     "selector": "source.raku",
     "file_patterns": ["*.raku", "*.rakumod", "*.rakutest", "*.rakudoc", "*.nqp"],
     "syntax": "Packages/User/Raku.sublime-syntax",
-    "working_dir": "$file_path",
+    "keyfiles": ["META6.json"],
     "encoding": "utf-8",
     "env": {
-        "AUTHOR_TESTING": "1"
+        "AUTHOR_TESTING": "1",
+        "RAKULIB": "lib/,../lib,../../lib"
     },
-    "cmd": ["raku", "--optimize=3", "-Ilib", "-I../lib", "-I../../lib", "$file"],
+    "cmd": ["raku", "--optimize=3", "$file"],
     "variants":[
         {
-            "name": "Profile Script",
-            "cmd": ["raku", "--optimize=3", "-Ilib", "-I../lib", "-I../../lib", "--profile", "$file"],
+            "name": "Syntax Check",
+            "cmd": ["raku", "--optimize=3", "-c", "$file"]
         },
         {
-            "name": "Test File",
-            "cmd": ["prove6", "-Ilib", "-I../lib", "-I../../lib", "--timer", "$file"]
+            "name": "Profiling",
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.html", "$file"],
+        },
+        {
+            "name": "Test",
+            "cmd": ["prove6", "--timer", "$file"]
         },
         {
             "name": "Test Folder",
-            "cmd": ["prove6", "-Ilib", "-I../lib", "-I../../lib", "--timer", "--jobs=3", "$file_path"]
+            "cmd": ["prove6", "--timer", "--jobs=3", "$file_path"]
         },
         {
             "name": "Test Project",
-            "keyfiles": ["META6.json"],
-            "cmd": ["prove6", "--lib", "--timer", "--jobs=3"]
+            "cmd": ["prove6", "--timer", "--jobs=3"]
         },
         {
             "name": "Extract Doc",
-            "cmd": ["raku", "--optimize=3", "-Ilib", "-I../lib", "-I../../lib", "--doc", "$file"],
+            "cmd": ["raku", "--optimize=3", "--doc", "$file"],
         }
     ]
 }
