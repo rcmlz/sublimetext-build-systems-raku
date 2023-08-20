@@ -15,10 +15,6 @@
             "cmd": ["raku", "--optimize=3", "-c", "$file"]
         },
         {
-            "name": "Profiling",
-            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.html", "$file"],
-        },
-        {
             "name": "Test",
             "cmd": ["prove6", "--timer", "$file"]
         },
@@ -29,6 +25,18 @@
         {
             "name": "Test Project",
             "cmd": ["prove6", "--timer", "--jobs=3"]
+        },
+        {
+            "name": "Profiling to .html",
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.html", "$file"],
+        },
+        {
+            "name": "Profiling to .json",
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.json", "$file"],
+        },
+        {
+            "name": "Profiling to .sql",
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.sql", "$file"],
         },
         {
             "name": "Extract Doc",
