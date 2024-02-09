@@ -28,19 +28,19 @@
         },
         {
             "name": "Profiling to .html",
-            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.html", "$file"],
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.html", "$file"]
         },
         {
             "name": "Profiling to .json",
-            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.json", "$file"],
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.json", "$file"]
         },
         {
             "name": "Profiling to .sql",
-            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.sql", "$file"],
+            "cmd": ["raku", "--optimize=3", "--profile=$file_base_name.profile.sql", "$file"]
         },
         {
             "name": "Extract Doc",
-            "cmd": ["raku", "--optimize=3", "--doc", "$file"],
+            "cmd": ["raku", "--optimize=3", "--doc", "$file"]
         }
     ]
 }

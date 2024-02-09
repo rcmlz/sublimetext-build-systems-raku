@@ -31,6 +31,32 @@ curl "$SOURCE_DIR/$SYNTAX_FILE" -o "$TARGET_DIR/$SYNTAX_FILE"
 cat "$TARGET_DIR/$BUILD_FILE"
 cat "$TARGET_DIR/$SYNTAX_FILE"
 ```
+
+You might want to install a Raku Language Server like [RakuNavigator](https://github.com/bscan/RakuNavigator)
+
+```
+cd ~/.raku
+git clone https://github.com/bscan/RakuNavigator
+cd RakuNavigator
+npm install
+npm run compile
+```
+
+and activate it in Preferences -> Package Settings -> LSP -> Settings
+
+```
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    "clients": {
+    	"rakunavigator": {
+        	"enabled": true,
+        	"command": ["node", "~/.raku/RakuNavigator/server/out/server.js", "--stdio"],
+        	"selector": "source.raku",
+        }
+    }
+}
+```
+
 ### Linux
 ToDo
 ### Windows
